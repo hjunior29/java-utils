@@ -4,13 +4,16 @@ A small, tested Java utility library. Each utility lives in its own source file 
 
 ## Requirements
 
-JDK 17 or newer. No Maven or external dependencies are needed.
+JDK 17 or newer. No Maven or external runtime dependencies are needed.
 
 ## Build and test
 
 ```sh
+sh scripts/format.sh
 sh scripts/check.sh
 ```
+
+Formatting uses the pinned Google Java Format 1.24.0 tool, downloaded once with a verified checksum. `curl` is required on first use. Checks reject formatting differences and all compiler lint warnings.
 
 ## Usage
 
@@ -20,11 +23,13 @@ import io.github.hjunior29.utils.ReverseString;
 String reversed = ReverseString.reverseString("hello"); // "olleh"
 ```
 
-## Initial utilities
+## Utilities
 
 - `reverseString` reverses Unicode code points.
 - `wordCount` counts whitespace-separated words.
 - `clampInt` clamps an integer to inclusive bounds and rejects reversed bounds.
+
+- `PadRight.padRight` pads to a Unicode code-point length without truncating.
 
 ## Adding utilities
 
